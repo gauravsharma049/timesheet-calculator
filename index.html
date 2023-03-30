@@ -1,22 +1,383 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  <title>Hello, world!</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+    }
+
+    .navbar {
+      height: 50px;
+    }
+
+    table {
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    thead {
+      background-color: rgb(20, 28, 138);
+      color: white;
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+      background-color: rgba(0, 0, 0, .05);
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: white;
+    }
+
+    .time {
+      width: 35px;
+      border-color: #62676c;
+    }
+
+    .am-pm {
+      width: 45px;
+      font-size: small;
+      height: 28px;
+    }
+
+    .btn {
+      background-color: #c4c5c7;
+      box-shadow: 0px 0px 3px #292b2e;
+      border-color: #c4c5c7;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="navbar bg-white shadow-sm mb-1"></div>
+   
+  <div class="container-fluid m-0 py-2 bg-white">
+    <h1 style="color: #62676c;" class="mb-3">Time Sheet Calculator</h1>
+
+    <form>
+      <table class="table table-striped shadow-lg">
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Starting Time</th>
+            <th scope="col">Ending Time</th>
+            <th scope="col">Break Deduction</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Monday</th>
+            <td>
+              <input class="time sth rounded text-center" value="8" type="number"> :
+              <input class="time stm rounded text-center" value="00" type="number">
+              <select class="am-pm st-am-pm rounded" name="" id="">
+                <option selected value="1">AM</option>
+                <option value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time eth rounded text-center" value="5" type="number"> :
+              <input class="time etm rounded text-center" value="00" type="number">
+              <select class="am-pm et-am-pm rounded" name="" id="">
+                <option value="1">AM</option>
+                <option selected value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time bdth rounded text-center" value="2" type="number"> :
+              <input class="time bdtm rounded text-center" value="00" type="number">
+
+            </td>
+            <td class="tt">
+              7 : 00
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Tuesday</th>
+            <td>
+              <input class="time sth rounded text-center" value="8" type="number"> :
+              <input class="time stm rounded text-center" value="00" type="number">
+              <select class="am-pm st-am-pm rounded" name="" id="">
+                <option selected value="1">AM</option>
+                <option value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time eth rounded text-center" value="6" type="number"> :
+              <input class="time etm rounded text-center" value="00" type="number">
+              <select class="am-pm et-am-pm rounded" name="" id="">
+                <option value="1">AM</option>
+                <option selected value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time bdth rounded text-center" value="4" type="number"> :
+              <input class="time bdtm rounded text-center" value="00" type="number">
+
+            </td>
+            <td class="tt">
+              6 : 00
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Wednesday</th>
+            <td>
+              <input class="time sth rounded text-center" value="8" type="number"> :
+              <input class="time stm rounded text-center" value="00" type="number">
+              <select class="am-pm st-am-pm rounded" name="" id="">
+                <option selected value="1">AM</option>
+                <option value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time eth rounded text-center" value="7" type="number"> :
+              <input class="time etm rounded text-center" value="00" type="number">
+              <select class="am-pm et-am-pm rounded" name="" id="">
+                <option value="1">AM</option>
+                <option selected value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time bdth rounded text-center" value="5" type="number"> :
+              <input class="time bdtm rounded text-center" value="00" type="number">
+
+            </td>
+            <td class="tt">
+              6 : 00
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Thursday</th>
+            <td>
+              <input class="time sth rounded text-center" value="8" type="number"> :
+              <input class="time stm rounded text-center" value="00" type="number">
+              <select class="am-pm st-am-pm rounded" name="" id="">
+                <option selected value="1">AM</option>
+                <option value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time eth rounded text-center" value="8" type="number"> :
+              <input class="time etm rounded text-center" value="00" type="number">
+              <select class="am-pm et-am-pm rounded" name="" id="">
+                <option value="1">AM</option>
+                <option selected value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time bdth rounded text-center" value="1" type="number"> :
+              <input class="time bdtm rounded text-center" value="00" type="number">
+
+            </td>
+            <td class="tt">
+              11 : 00
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Friday</th>
+            <td>
+              <input class="time sth rounded text-center" value="8" type="number"> :
+              <input class="time stm rounded text-center" value="00" type="number">
+              <select class="am-pm st-am-pm rounded" name="" id="">
+                <option selected value="1">AM</option>
+                <option value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time eth rounded text-center" value="9" type="number"> :
+              <input class="time etm rounded text-center" value="00" type="number">
+              <select class="am-pm et-am-pm rounded" name="" id="">
+                <option value="1">AM</option>
+                <option selected value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time bdth rounded text-center" value="2" type="number"> :
+              <input class="time bdtm rounded text-center" value="00" type="number">
+
+            </td>
+            <td class="tt">
+              11 : 00
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Saturday</th>
+            <td>
+              <input class="time sth rounded text-center" value="8" type="number"> :
+              <input class="time stm rounded text-center" value="00" type="number">
+              <select class="am-pm st-am-pm rounded" name="" id="">
+                <option selected value="1">AM</option>
+                <option value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time eth rounded text-center" value="10" type="number"> :
+              <input class="time etm rounded text-center" value="00" type="number">
+              <select class="am-pm et-am-pm rounded" name="" id="">
+                <option value="1">AM</option>
+                <option selected value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time bdth rounded text-center" value="3" type="number"> :
+              <input class="time bdtm rounded text-center" value="00" type="number">
+
+            </td>
+            <td class="tt">
+              11 : 00
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Sunday</th>
+            <td>
+              <input class="time sth rounded text-center" value="8" type="number"> :
+              <input class="time stm rounded text-center" value="00" type="number">
+              <select class="am-pm st-am-pm rounded" name="" id="">
+                <option selected value="1">AM</option>
+                <option value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time eth rounded text-center" value="11" type="number"> :
+              <input class="time etm rounded text-center" value="00" type="number">
+              <select class="am-pm et-am-pm rounded" name="" id="">
+                <option value="1">AM</option>
+                <option selected value="2">PM</option>
+              </select>
+            </td>
+            <td>
+              <input class="time bdth rounded text-center" value="4" type="number"> :
+              <input class="time bdtm rounded text-center" value="00" type="number">
+
+            </td>
+            <td class="tt">
+              11 : 00
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">hi</td>
+            <td><b>Total Hours:</b></td>
+            <td><b class="totalTime">63 : 00</b></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" onclick="calculate()" class="btn btn-sm"><img height="17px;" src="calculator-solid.svg"></svg> <span class="pt-1">CALCULATE</span></button> &nbsp;
+      <button type="reset" class="btn btn-sm"><img height="16px" src="circle-xmark-solid.svg" alt=""> CLEAR ALL</button>
+    </form>
+
+  </div>
+
+  <script>
+    function calculate() {
+      let sth = document.getElementsByClassName('sth');
+      let stm = document.getElementsByClassName('stm');
+      let stampm = document.getElementsByClassName('st-am-pm');
+      let eth = document.getElementsByClassName('eth');
+      let etm = document.getElementsByClassName('etm');
+      let etampm = document.getElementsByClassName('et-am-pm');
+      let bdth = document.getElementsByClassName('bdth');
+      let bdtm = document.getElementsByClassName('bdtm');
+      let tt = document.getElementsByClassName('tt');
+      let totalh = 0;
+      let totalm = 0;
+      let totalTime = 0;
+      for (let i = 0; i < 7; i++) {
+        let time = 0;
+        if (stampm[i].value == 1 && etampm[i].value == 2) {
+          // time = parseInt(sth1.value) + parseInt(stm1.value)/60;
+          time = 12 - parseInt(sth[i].value);
+          time = time + parseInt(eth[i].value);
+          let min = parseInt(etm[i].value) - parseInt(stm[i].value);
+          if (min < 0) {
+            time = time - 1;
+            min = 60 + min;
+          }
+
+          min = min - parseInt(bdtm[i].value);
+          if (min < 0) {
+            time = time - 1;
+            min = 60 + min;
+          }
+          time = time - parseInt(bdth[i].value);
+          totalm = totalm + min;
+          if (min < 10) {
+            min = "0" + min;
+          }
+          totalh = totalh + time;
+
+          time = time + " : " + min;
+          tt[i].innerHTML = time;
+          // sth1.value = parseInt(sth1.value) + 12;
+          console.log(time);
+        }
+        else if (stampm[i].value == etampm[i].value) {
+          time = parseInt(eth[i].value) - parseInt(sth[i].value);
+          let min = parseInt(etm[i].value) - parseInt(stm[i].value);
+          if (min < 0) {
+            time = time - 1;
+            min = 60 + min;
+          }
+
+          min = min - parseInt(bdtm[i].value);
+          if (min < 0) {
+            time = time - 1;
+            min = 60 + min;
+          }
+          time = time - parseInt(bdth[i].value);
+          totalm = totalm + min;
+          if (min < 10) {
+            min = "0" + min;
+          }
+          totalh = totalh + time;
+          time = time + " : " + min;
+          tt.innerHTML = time;
+          console.log(time);
+        }
+
+      }
+      totalh = totalh + Math.floor(totalm / 60);
+      totalm = totalm % 60;
+      if (totalm < 10) {
+        totalm = "0" + totalm;
+      }
+      totalTime = totalh + " : " + totalm;
+      document.getElementsByClassName('totalTime')[0].innerHTML = totalTime;
+    }
+
+  </script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
